@@ -16,6 +16,8 @@ namespace Task01
 {
     class Program
     {
+        
+
         private class Point
         {
             public double X { get; set; }
@@ -24,11 +26,17 @@ namespace Task01
         private static Point GetPoint()
         {
             var point = new Point();
-
-            Console.WriteLine("Enter X:");
-            point.X = Double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Y:");
-            point.Y = Double.Parse(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Enter X:");
+                point.X = Double.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Y:");
+                point.Y = Double.Parse(Console.ReadLine());
+            }
+            catch(Exception e)
+            {
+                throw new Exception("ВЫ ЛОХ");
+            }
             return point;
         }
 
@@ -50,98 +58,162 @@ namespace Task01
             switch (choice)
             {
                 //Circle
-                case "a": //+
+                case "a":
                     Console.WriteLine("\nYou selected a schedule [a]");
                     if (Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) <= 1)
-                        Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'a'"); 
-                    else Console.WriteLine("BAD POINT.");
+                    {
+                        Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'a'");
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("BAD POINT.");
+                        
+                    }
                     break;
 
                 //Circle with a hole
-                case "b": //+
+                case "b":
                     Console.WriteLine("\nYou selected a schedule [b]");
                     if (Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) <= 1)
                     {
                         if (Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) >= 0.5)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'b'");
-                        else Console.WriteLine("BAD POINT.");
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                            
+                        }
                     }
                     else Console.WriteLine("BAD POINT.");
                     break;
 
                 //kvadrat
-                case "c": //+
+                case "c":
                     Console.WriteLine("\nYou selected a schedule [c]");
-                    if(point.X <= 1 && point.X >= -1 && point.Y <= 1 && point.Y >= -1 )
+                    if (point.X <= 1 && point.X >= -1 && point.Y <= 1 && point.Y >= -1)
+                    {
                         Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'c'");
-                    else Console.WriteLine("BAD POINT.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("BAD POINT.");
+                    }
                     break;
 
                 //romb
-                case "d": //+
+                case "d":
                     Console.WriteLine("\nYou selected a schedule [d]");
                     if (Math.Abs(point.X) + Math.Abs(point.Y) <= 1)
+                    {
                         Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'd'");
-                    else Console.WriteLine("BAD POINT.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("BAD POINT.");
+                    }
                     break;
 
                 //vityanutii romb
-                case "e": //+
+                case "e":
                     Console.WriteLine("\nYou selected a schedule [e]");
                     if (2*(Math.Abs(point.X)) + Math.Abs(point.Y) <= 1)
+                    {
                         Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'e'");
-                    else Console.WriteLine("BAD POINT.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("BAD POINT.");
+                    }
                     break;
 
                 //polkryga + triangl.
                 case "f": 
                     Console.WriteLine("\nYou selected a schedule [f]");
-                    if (point.X >= 0 && point.Y >= 0)//+
-                    {
-                            if (Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) <= 1)
-                                Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'f'");
-                            else Console.WriteLine("BAD POINT.");
-                    }
-                    else if (point.X >= 0 && point.Y <= 0)//+
+                    if (point.X >= 0 && point.Y >= 0)
                     {
                         if (Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) <= 1)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'f'");
-                        else Console.WriteLine("BAD POINT.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
+                    }
+                    else if (point.X >= 0 && point.Y <= 0)
+                    {
+                        if (Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) <= 1)
+                        {
+                            Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'f'");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
                     }
                     else if (point.X <= 0 && point.Y >= 0)
                     {
-                        if (point.Y <= 0.5*point.X+1)//+
+                        if (point.Y <= 0.5*point.X + 1)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'f'");
-                        else Console.WriteLine("BAD POINT.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
                     }
                     else if (point.X <= 0 && point.Y <= 0)
                     {
-                        if (point.Y >= -0.5 * point.X - 1)//+
+                        if (point.Y >= -0.5*point.X - 1)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'f'");
-                        else Console.WriteLine("BAD POINT.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
                     }
                     break;
 
                 //triangle
                 case "g":
                     Console.WriteLine("\nYou selected a schedule [g]");
-                       if ((point.Y >= 0 && point.X <= 0) || (point.Y <= 0 && point.X <= 0))//+
+                       if ((point.Y >= 0 && point.X <= 0) || (point.Y <= 0 && point.X <= 0))
                     {
-                        if (point.Y <= 3 * point.X + 2)
+                        if (point.Y <= 3*point.X + 2)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'g'");
-                        else Console.WriteLine("BAD POINT.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
                     }
-                    else if ((point.Y <= 0 && point.X >= 0) || (point.Y <= 0 && point.X <= 0))//+
+                    else if ((point.Y <= 0 && point.X >= 0) || (point.Y <= 0 && point.X <= 0))
                     {
                         if (point.Y >= -1)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'g'");
-                        else Console.WriteLine("BAD POINT.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
                     }
-                    else if ((point.Y <= 0 && point.X >= 0) || (point.Y >= 0 && point.X >= 0))//+
+                    else if ((point.Y <= 0 && point.X >= 0) || (point.Y >= 0 && point.X >= 0))
                     {
-                        if (point.Y <= -3 * point.X + 2) 
+                        if (point.Y <= -3*point.X + 2)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'g'");
-                        else Console.WriteLine("BAD POINT.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
                     }
                     break;
                     
@@ -150,62 +222,107 @@ namespace Task01
                     Console.WriteLine("\nYou selected a schedule [h]");
                     if ((point.Y <= 0 && point.X >= 0) || (point.X <= 0 && point.Y <= 0))
                     {
-                        if (point.Y >= -2) //+
+                        if (point.Y >= -2)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'h'");
-                        else Console.WriteLine("BAD POINT.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
                     }
                     else if ((point.Y >= 0 && point.X <= 0) || (point.Y <= 0 && point.X <= 0))
                     {
-                        if ( point.X >= -1) //+
+                        if (point.X >= -1)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'h'");
-                        else Console.WriteLine("BAD POINT.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
                     }
                     else if (point.X >= 0 && point.Y >= 0) 
                     {
-                        if (point.Y < point.X) //+
+                        if (point.Y < point.X)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'h'");
-                        else Console.WriteLine("BAD POINT.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
                     }
                     else if (point.X <= 0 && point.Y >= 0)
                     {
-                        if (point.Y > -point.X) //-
+                        if (point.Y > -point.X)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'h'");
-                        else Console.WriteLine("BAD POINT.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
                     }
                     else if ((point.Y <= 0 && point.X >= 0) || (point.Y >= 0 && point.X >= 0))
                     {
-                        if (point.X <= 1) //+
+                        if (point.X <= 1)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'h'");
-                        else Console.WriteLine("BAD POINT.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
                     }
                     break;
 
                 //Fiveangle
                 case "i":
                     Console.WriteLine("\nYou selected a schedule [i]");
-                    if ((point.Y >= 0 && point.X <= 0) || (point.Y <= 0 && point.X <= 0))//+
+                    if ((point.Y >= 0 && point.X <= 0) || (point.Y <= 0 && point.X <= 0))
                     {
-                        if (point.Y <= 2 * point.X + 3)
+                        if (point.Y <= 2*point.X + 3)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'i'");
-                        else Console.WriteLine("BAD POINT.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
                     }
                     else if ((point.Y <= 0 && point.X <= 0) || (point.Y <= 0 && point.X >= 0))
                     {
-                        if (point.Y >= 0.3333333333333333333 * point.X - 0.3333333333333333333)//-
+                        if (point.Y >= 0.3333333333333333333*point.X - 0.3333333333333333333)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'i'");
-                        else Console.WriteLine("BAD POINT.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
                     }
-                    else if (point.Y <= 0 && point.X >= 0) //-
+                    else if (point.Y <= 0 && point.X >= 0)
                     {
                         if (point.Y <= 0)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'i'");
-                        else Console.WriteLine("BAD POINT.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
                     }
                     else if (point.X <= 0 && point.Y >= 0)
                     {
-                        if (point.Y > -point.X) //+
+                        if (point.Y > -point.X)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'i'");
-                        else Console.WriteLine("BAD POINT.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
                     }
                     break;
 
@@ -214,21 +331,36 @@ namespace Task01
                     Console.WriteLine("\nYou selected a schedule [j]");
                     if ((point.Y >= 0 && point.X >= 0) || (point.Y >= 0 && point.X <= 0))
                     {
-                        if (point.Y >= 1) //+
+                        if (point.Y >= 1)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'j'");
-                        else Console.WriteLine("BAD POINT.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
                     }
                     else if (point.Y >= 0 && point.X >= 0)
                     {
-                        if (point.Y < point.X) //+
+                        if (point.Y < point.X)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'j'");
-                        else Console.WriteLine("BAD POINT.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
                     }
                     else if (point.Y >= 0 && point.X <= 0)
                     {
-                        if (point.Y > -point.X) //+
+                        if (point.Y > -point.X)
+                        {
                             Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure 'j'");
-                        else Console.WriteLine("BAD POINT.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("BAD POINT.");
+                        }
                     }
                     break;
 
