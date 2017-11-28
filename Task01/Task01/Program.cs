@@ -13,11 +13,11 @@ namespace Task01
 {
     using System;
 
-    public class Program
+    public static class Program 
     {
         public static void Main(string[] args)
         {
-            var point = GetPoint();
+            var point = Data.GetPoint();
 
             Console.WriteLine("Select schedule:" +
                               " \na -- Circle," +
@@ -38,11 +38,11 @@ namespace Task01
                     Console.WriteLine("\nYou selected a schedule [a]");
                     if (Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) <= 1)
                     {
-                        SetMessage(true, "a");
+                        Data.SetMessage(true, "a", point.X, point.Y);
                     }
                     else
                     {
-                        SetMessage(false, "s");
+                        Data.SetMessage(false, "s", point.X, point.Y);
                     }
 
                     break;
@@ -54,14 +54,14 @@ namespace Task01
                     {
                         if (Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) >= 0.5)
                         {
-                            SetMessage(true, "b");
+                            Data.SetMessage(true, "b", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
-                    else SetMessage(false, "s");
+                    else Data.SetMessage(false, "s", point.X, point.Y);
                     break;
 
                 ////kvadrat
@@ -69,11 +69,11 @@ namespace Task01
                     Console.WriteLine("\nYou selected a schedule [c]");
                     if (point.X <= 1 && point.X >= -1 && point.Y <= 1 && point.Y >= -1)
                     {
-                        SetMessage(true, "c");
+                        Data.SetMessage(true, "c", point.X, point.Y);
                     }
                     else
                     {
-                        SetMessage(false, "s");
+                        Data.SetMessage(false, "s", point.X, point.Y);
                     }
 
                     break;
@@ -83,11 +83,11 @@ namespace Task01
                     Console.WriteLine("\nYou selected a schedule [d]");
                     if (Math.Abs(point.X) + Math.Abs(point.Y) <= 1)
                     {
-                        SetMessage(true, "d");
+                        Data.SetMessage(true, "d", point.X, point.Y);
                     }
                     else
                     {
-                        SetMessage(false, "s");
+                        Data.SetMessage(false, "s", point.X, point.Y);
                     }
 
                     break;
@@ -97,11 +97,11 @@ namespace Task01
                     Console.WriteLine("\nYou selected a schedule [e]");
                     if ((2 * Math.Abs(point.X)) + Math.Abs(point.Y) <= 1)
                     {
-                        SetMessage(true, "e");
+                        Data.SetMessage(true, "e", point.X, point.Y);
                     }
                     else
                     {
-                        SetMessage(false, "s");
+                        Data.SetMessage(false, "s", point.X, point.Y);
                     }
 
                     break;
@@ -113,44 +113,44 @@ namespace Task01
                     {
                         if (Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) <= 1)
                         {
-                            SetMessage(true, "f");
+                            Data.SetMessage(true, "f", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
                     else if (point.X >= 0 && point.Y <= 0)
                     {
                         if (Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) <= 1)
                         {
-                            SetMessage(true, "f");
+                            Data.SetMessage(true, "f", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
                     else if (point.X <= 0 && point.Y >= 0)
                     {
                         if (point.Y <= 0.5 * point.X + 1)
                         {
-                            SetMessage(true, "f");
+                            Data.SetMessage(true, "f", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
                     else if (point.X <= 0 && point.Y <= 0)
                     {
                         if (point.Y >= -0.5 * point.X - 1)
                         {
-                            SetMessage(true, "f");
+                            Data.SetMessage(true, "f", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
 
@@ -163,33 +163,33 @@ namespace Task01
                     {
                         if (point.Y <= (3 * point.X) + 2)
                         {
-                            SetMessage(true, "g");
+                            Data.SetMessage(true, "g", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
                     else if ((point.Y <= 0 && point.X >= 0) || (point.Y <= 0 && point.X <= 0))
                     {
                         if (point.Y >= -1)
                         {
-                            SetMessage(true, "g");
+                            Data.SetMessage(true, "g", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
                     else if ((point.Y <= 0 && point.X >= 0) || (point.Y >= 0 && point.X >= 0))
                     {
                         if (point.Y <= -3 * point.X + 2)
                         {
-                            SetMessage(true, "g");
+                            Data.SetMessage(true, "g", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
 
@@ -202,55 +202,55 @@ namespace Task01
                     {
                         if (point.Y >= -2)
                         {
-                            SetMessage(true, "h");
+                            Data.SetMessage(true, "h", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
                     else if ((point.Y >= 0 && point.X <= 0) || (point.Y <= 0 && point.X <= 0))
                     {
                         if (point.X >= -1)
                         {
-                            SetMessage(true, "h");
+                            Data.SetMessage(true, "h", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
                     else if (point.X >= 0 && point.Y >= 0)
                     {
                         if (point.Y < point.X)
                         {
-                            SetMessage(true, "h");
+                            Data.SetMessage(true, "h", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
                     else if (point.X <= 0 && point.Y >= 0)
                     {
                         if (point.Y > -point.X)
                         {
-                            SetMessage(true, "h");
+                            Data.SetMessage(true, "h", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
                     else if ((point.Y <= 0 && point.X >= 0) || (point.Y >= 0 && point.X >= 0))
                     {
                         if (point.X <= 1)
                         {
-                            SetMessage(true, "h");
+                            Data.SetMessage(true, "h", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
 
@@ -263,44 +263,44 @@ namespace Task01
                     {
                         if (point.Y <= (2 * point.X) + 3)
                         {
-                            SetMessage(true, "i");
+                            Data.SetMessage(true, "i", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
                     else if ((point.Y <= 0 && point.X <= 0) || (point.Y <= 0 && point.X >= 0))
                     {
                         if (point.Y >= 0.3333333333333333333 * point.X - 0.3333333333333333333)
                         {
-                            SetMessage(true, "i");
+                            Data.SetMessage(true, "i", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
                     else if (point.Y <= 0 && point.X >= 0)
                     {
                         if (point.Y <= 0)
                         {
-                            SetMessage(true, "i");
+                            Data.SetMessage(true, "i", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
                     else if (point.X <= 0 && point.Y >= 0)
                     {
                         if (point.Y > -point.X)
                         {
-                            SetMessage(true, "i");
+                            Data.SetMessage(true, "i", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
 
@@ -313,33 +313,33 @@ namespace Task01
                     {
                         if (point.Y >= 1)
                         {
-                            SetMessage(true, "j");
+                            Data.SetMessage(true, "j", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
                     else if (point.Y >= 0 && point.X >= 0)
                     {
                         if (point.Y < point.X)
                         {
-                            SetMessage(true, "j");
+                            Data.SetMessage(true, "j", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
                     else if (point.Y >= 0 && point.X <= 0)
                     {
                         if (point.Y > -point.X)
                         {
-                            SetMessage(true, "j");
+                            Data.SetMessage(true, "j", point.X, point.Y);
                         }
                         else
                         {
-                            SetMessage(false, "s");
+                            Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
 
@@ -352,37 +352,6 @@ namespace Task01
             }
 
             Console.ReadKey();
-        }
-
-        private static Point GetPoint()
-        {
-            var point = new Point();
-            Console.WriteLine("Enter X:");
-            point.X = double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Y:");
-            point.Y = double.Parse(Console.ReadLine());
-
-            return point;
-        }
-
-        private static void SetMessage(bool f, string s)
-        {
-            var point = GetPoint();
-            if (f)
-            {
-                Console.WriteLine($"The point [{point.X};{point.Y}] belongs to the figure {s}");
-            }
-            else
-            {
-                Console.WriteLine("BAD POINT.");
-            }
-        }
-
-        private class Point
-        {
-            public double X { get; set; }
-
-            public double Y { get; set; }
-        }
+        } 
     }
 }
