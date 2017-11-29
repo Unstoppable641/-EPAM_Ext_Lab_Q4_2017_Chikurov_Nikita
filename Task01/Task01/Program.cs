@@ -36,9 +36,9 @@ namespace Task01
                 ////Circle
                 case "a":
                     Console.WriteLine("\nYou selected a schedule [a]");
-                    if (Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) <= 1)
-                    {
-                        Data.SetMessage(true, "a", point.X, point.Y);
+                    if (Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) <= 1)//todo pn можно сократить до Data.SetMessage(Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) <= 1, "a", point.X, point.Y);
+					{//todo pn Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) лучше вынести в переменную. Везде ниже аналогично
+						Data.SetMessage(true, "a", point.X, point.Y);
                     }
                     else
                     {

@@ -13,10 +13,10 @@ namespace Task02
 
     public class Program
     {
-       public static void Main(string[] args)
+       public static void Main(string[] args)//todo pn если в предыдущем задании выделил слой бизнес-логики, то почему здесь нет?
         {
             Console.WriteLine("Введите коэффициент [h]:");
-            double h = double.Parse(Console.ReadLine());
+            double h = double.Parse(Console.ReadLine());//todo pn возможна исключительная ситуация
             double a1 = 1 - ((Math.Sin(4 * h) * Math.Cos((h * h))) + 18);
             double a2 = Math.Abs(Math.Sin(8 * h)) + 17;
             double a = Math.Sqrt(a2 / (a1 * a1));
@@ -34,14 +34,14 @@ namespace Task02
             {
                 Console.WriteLine("Дискриминант отрицательный, корней нет\n");
             }
-
+			//todo pn else здесь более подходит
             if (d == 0)
             {
                 double x1 = -b / (2 * a);
                 Console.WriteLine($"Дискриминант = 0, \nx = {x1}");
             }
-
-            if (d > 0)
+	        //todo pn else здесь более подходит
+			if (d > 0)
             {
                 double x1 = (-b + Math.Sqrt(Convert.ToDouble(d))) / (2 * a);
                 double x2 = (-b - Math.Sqrt(Convert.ToDouble(d))) / (2 * a);
