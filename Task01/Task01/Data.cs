@@ -4,16 +4,6 @@
 
     public class Data
     {
-        public static Point GetPoint()
-        {
-            var point = new Point();
-            Console.WriteLine("Enter X:");
-            point.X = double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Y:");
-            point.Y = double.Parse(Console.ReadLine());
-            return point;
-        }
-
         public static void SetMessage(bool f, string s, double x, double y)
         {
             if (f)
