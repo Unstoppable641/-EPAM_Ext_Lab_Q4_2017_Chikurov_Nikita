@@ -8,11 +8,10 @@
         {
             var point = new Point();
             Console.WriteLine("Enter X:");
-            point.X = double.Parse(Console.ReadLine());//todo pn возможна исключительная ситуация
-			Console.WriteLine("Enter Y:");
-            point.Y = double.Parse(Console.ReadLine());//todo pn возможна исключительная ситуация
-
-			return point;
+            point.X = double.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Y:");
+            point.Y = double.Parse(Console.ReadLine());
+            return point;
         }
 
         public static void SetMessage(bool f, string s, double x, double y)
@@ -27,7 +26,7 @@
             }
         }
 
-        public class Point//todo pn в отдельный класс
+        public class Point
         {
             public double X { get; set; }
 

@@ -19,6 +19,15 @@ namespace Task01
         {
             var point = Data.GetPoint();
 
+            var circle = Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) <= 1;
+            var circleWithAHole = Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) <= 0.5;
+            var square = point.X <= 1 && point.X >= -1 && point.Y <= 1 && point.Y >= -1;
+            var rhombus = Math.Abs(point.X) + Math.Abs(point.Y) <= 1;
+            var stretchedrhombus = (2 * Math.Abs(point.X)) + Math.Abs(point.Y) <= 1;
+            var iside = (point.X >= 0) && (point.Y >= 0);
+            var iIside = (point.X <= 0) && (point.Y >= 0);
+            var iIIside = (point.X <= 0) && (point.Y <= 0);
+            var iVside = (point.X >= 0) && (point.Y <= 0);
             Console.WriteLine("Select schedule:" +
                               " \na -- Circle," +
                               " \nb -- Circle with a hole," +
@@ -36,9 +45,9 @@ namespace Task01
                 ////Circle
                 case "a":
                     Console.WriteLine("\nYou selected a schedule [a]");
-                    if (Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) <= 1)//todo pn можно сократить до Data.SetMessage(Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) <= 1, "a", point.X, point.Y);
-					{//todo pn Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) лучше вынести в переменную. Везде ниже аналогично
-						Data.SetMessage(true, "a", point.X, point.Y);
+                    if (circle)
+                    {
+                        Data.SetMessage(true, "a", point.X, point.Y);
                     }
                     else
                     {
@@ -50,9 +59,9 @@ namespace Task01
                 ////Circle with a hole
                 case "b":
                     Console.WriteLine("\nYou selected a schedule [b]");
-                    if (Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) <= 1)
+                    if (circle)
                     {
-                        if (Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) >= 0.5)
+                        if (circleWithAHole)
                         {
                             Data.SetMessage(true, "b", point.X, point.Y);
                         }
@@ -67,7 +76,7 @@ namespace Task01
                 ////kvadrat
                 case "c":
                     Console.WriteLine("\nYou selected a schedule [c]");
-                    if (point.X <= 1 && point.X >= -1 && point.Y <= 1 && point.Y >= -1)
+                    if (square)
                     {
                         Data.SetMessage(true, "c", point.X, point.Y);
                     }
@@ -81,7 +90,7 @@ namespace Task01
                 ////romb
                 case "d":
                     Console.WriteLine("\nYou selected a schedule [d]");
-                    if (Math.Abs(point.X) + Math.Abs(point.Y) <= 1)
+                    if (rhombus)
                     {
                         Data.SetMessage(true, "d", point.X, point.Y);
                     }
@@ -95,7 +104,7 @@ namespace Task01
                 ////vityanutii romb
                 case "e":
                     Console.WriteLine("\nYou selected a schedule [e]");
-                    if ((2 * Math.Abs(point.X)) + Math.Abs(point.Y) <= 1)
+                    if (stretchedrhombus)
                     {
                         Data.SetMessage(true, "e", point.X, point.Y);
                     }
@@ -109,9 +118,9 @@ namespace Task01
                 ////polkryga + triangl.
                 case "f":
                     Console.WriteLine("\nYou selected a schedule [f]");
-                    if (point.X >= 0 && point.Y >= 0)
+                    if (iside)
                     {
-                        if (Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) <= 1)
+                        if (circle)
                         {
                             Data.SetMessage(true, "f", point.X, point.Y);
                         }
@@ -120,9 +129,9 @@ namespace Task01
                             Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
-                    else if (point.X >= 0 && point.Y <= 0)
+                    else if (iVside)
                     {
-                        if (Math.Abs(point.X - 0) + Math.Abs(point.Y - 0) <= 1)
+                        if (circle)
                         {
                             Data.SetMessage(true, "f", point.X, point.Y);
                         }
@@ -131,7 +140,7 @@ namespace Task01
                             Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
-                    else if (point.X <= 0 && point.Y >= 0)
+                    else if (iIside)
                     {
                         if (point.Y <= 0.5 * point.X + 1)
                         {
@@ -142,7 +151,7 @@ namespace Task01
                             Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
-                    else if (point.X <= 0 && point.Y <= 0)
+                    else if (iIIside)
                     {
                         if (point.Y >= -0.5 * point.X - 1)
                         {
@@ -159,7 +168,7 @@ namespace Task01
                 ////triangle
                 case "g":
                     Console.WriteLine("\nYou selected a schedule [g]");
-                    if ((point.Y >= 0 && point.X <= 0) || (point.Y <= 0 && point.X <= 0))
+                    if (iIside || iIIside)
                     {
                         if (point.Y <= (3 * point.X) + 2)
                         {
@@ -170,7 +179,7 @@ namespace Task01
                             Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
-                    else if ((point.Y <= 0 && point.X >= 0) || (point.Y <= 0 && point.X <= 0))
+                    else if (iVside || (point.X <= 0) && (point.Y <= 0))
                     {
                         if (point.Y >= -1)
                         {
@@ -181,7 +190,7 @@ namespace Task01
                             Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
-                    else if ((point.Y <= 0 && point.X >= 0) || (point.Y >= 0 && point.X >= 0))
+                    else if ((point.X >= 0) && (point.Y <= 0) || iside)
                     {
                         if (point.Y <= -3 * point.X + 2)
                         {
@@ -198,7 +207,7 @@ namespace Task01
                 ////reversive flag
                 case "h":
                     Console.WriteLine("\nYou selected a schedule [h]");
-                    if ((point.Y <= 0 && point.X >= 0) || (point.X <= 0 && point.Y <= 0))
+                    if (iVside || iIIside)
                     {
                         if (point.Y >= -2)
                         {
@@ -209,7 +218,7 @@ namespace Task01
                             Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
-                    else if ((point.Y >= 0 && point.X <= 0) || (point.Y <= 0 && point.X <= 0))
+                    else if (iIside || (point.X <= 0) && (point.Y <= 0))
                     {
                         if (point.X >= -1)
                         {
@@ -220,7 +229,7 @@ namespace Task01
                             Data.SetMessage(false, "s", point.X, point.Y);
                         }
                     }
-                    else if (point.X >= 0 && point.Y >= 0)
+                    else if (iside)
                     {
                         if (point.Y < point.X)
                         {

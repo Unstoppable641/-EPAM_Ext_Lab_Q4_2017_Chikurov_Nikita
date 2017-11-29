@@ -13,40 +13,30 @@ namespace Task02
 
     public class Program
     {
-       public static void Main(string[] args)//todo pn если в предыдущем задании выделил слой бизнес-логики, то почему здесь нет?
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Введите коэффициент [h]:");
-            double h = double.Parse(Console.ReadLine());//todo pn возможна исключительная ситуация
-            double a1 = 1 - ((Math.Sin(4 * h) * Math.Cos((h * h))) + 18);
-            double a2 = Math.Abs(Math.Sin(8 * h)) + 17;
-            double a = Math.Sqrt(a2 / (a1 * a1));
-            Console.WriteLine($"Коэф a = {a}");
-
-            double b1 = 3 + Math.Abs(Math.Tan(a * (h * h)) - Math.Sin(a * h));
-            double b = 1 - Math.Sqrt(3 / b1);
-            Console.WriteLine($"Коэф b = {b}");
-            double c = (a * (h * h)) * ((Math.Sin(b * h) + (b * ((h * h) * h))) * (Math.Cos(a * h)));
-            Console.WriteLine($"Коэф c = {c}");
-
-            double d;
-            d = (b * b) - ((4 * a) * c);
-            if (d < 0)
+            bool repeat = true;
+            var f = new Data();
+            while (repeat)
             {
-                Console.WriteLine("Дискриминант отрицательный, корней нет\n");
+                try
+                {
+                    Console.WriteLine("Введите коэффициент [h]:");
+                    double h = double.Parse(Console.ReadLine());
+                    Data.FindA(h);
+                    repeat = false;
+                    Console.ReadKey();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"ERROR: {ex.Message} [TRY AGAIN ? Y/N]");
+                    var ki = Console.ReadKey(true);
+                    if (ki.Key != ConsoleKey.Y)
+                    {
+                        repeat = false;
+                    }
+                }
             }
-			//todo pn else здесь более подходит
-            if (d == 0)
-            {
-                double x1 = -b / (2 * a);
-                Console.WriteLine($"Дискриминант = 0, \nx = {x1}");
-            }
-	        //todo pn else здесь более подходит
-			if (d > 0)
-            {
-                double x1 = (-b + Math.Sqrt(Convert.ToDouble(d))) / (2 * a);
-                double x2 = (-b - Math.Sqrt(Convert.ToDouble(d))) / (2 * a);
-                Console.WriteLine($"Дискриминант = {d},\nx1 = {x1},\nx2 = {x2}");
-            }
-        }
+        } 
     }
 }
