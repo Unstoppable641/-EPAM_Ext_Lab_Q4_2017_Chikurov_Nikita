@@ -15,7 +15,7 @@ namespace HWT_02_TASK01
        public static void Main(string[] args)
         {
             var repeat = true;
-            while (repeat)
+            while (repeat)//todo pn можешь не исправлять, то выглядит, как будто лабораторку в универе сдаешь, а не программу для заказчика пишешь. Разделяй слои UI и бизнес-логики.
             {
                 try
                 {

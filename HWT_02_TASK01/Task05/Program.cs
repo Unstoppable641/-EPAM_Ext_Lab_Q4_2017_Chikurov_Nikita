@@ -11,13 +11,13 @@ namespace Task05
 
     public class Program
     {
-       public static void Main(string[] args)
+       public static void Main(string[] args)//todo pn частное решение для общей задачи
        {
             var sum = 0;
-            for (var i = 1; i < 1000; i++)
+            for (var i = 1; i < 1000; i++)//todo pn хардкод
             {
-                if (i % 3 == 0 || i % 5 == 0)
-                {
+                if (i % 3 == 0 || i % 5 == 0)//todo pn хардкод
+				{
                     sum += i;
                 }
             }

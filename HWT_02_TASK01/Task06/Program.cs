@@ -11,7 +11,7 @@ namespace Task06
  
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main(string[] args)//todo pn нет разделения логик UI и бизнеса + не выполнено требование задания (убирание стиля при повторном введении)
         {
             string[] str = { "None", "Bold", "Italic", "Underline" };
             int[] num = new int[4];
