@@ -9,9 +9,9 @@ namespace Task04
 {
     using System;
 
-    class Program
+    public static class Program
     {
-        static void Main(string[] args)
+       public static void Main(string[] args)
         {
             while (Data.Repeat)
             {
@@ -25,6 +25,7 @@ namespace Task04
                     {
                         throw new ArgumentException("[a, b] must be greater than zero.");
                     }
+
                     int[,] m = new int[a, b]; ////a, b - размеры массива
 
                     Data.UnsortedArrayPrint(m, a, b);

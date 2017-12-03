@@ -2,7 +2,7 @@
 {
     using System;
 
-    class Data
+    public static class Data
     {
         public static bool Repeat = true;
 
@@ -24,13 +24,13 @@
             {
                 for (int j = 0; j < b; j++)
                 {
-                    if ((i + j)%2 == 0)
+                    if ((i + j) % 2 == 0)
                     {
                         sum += m[i, j];
                     }
                 }
-
             }
+
             Console.WriteLine($"\nbsum of elements of a two-dimensional array= {sum}");
         }
 
@@ -42,7 +42,7 @@
             {
                 for (int j = 0; j < b; j++)
                 {
-                    m[i,j] = rnd.Next(-10, 10);
+                    m[i, j] = rnd.Next(-10, 10);
                     Console.WriteLine($"m[{i}]= {m[i, j]}");
                 }
             }

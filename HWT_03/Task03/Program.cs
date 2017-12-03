@@ -10,7 +10,7 @@ namespace Task03
 
    public static class Program
     {
-        static void Main(string[] args)
+       public static void Main(string[] args)
         {
             while (Data.Repeat)
             {
@@ -22,6 +22,7 @@ namespace Task03
                     {
                         throw new ArgumentException("[size] must be greater than zero.");
                     }
+
                     int[] m = new int[size];
 
                     Data.UnsortedArrayPrint(m);
@@ -30,7 +31,6 @@ namespace Task03
                 }
                 catch (Exception ex)
                 {
-                    
                     Console.WriteLine($"\n\nERROR: {ex.Message}");
                 }
             }

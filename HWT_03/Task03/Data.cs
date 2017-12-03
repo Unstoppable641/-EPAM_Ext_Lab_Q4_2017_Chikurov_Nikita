@@ -4,6 +4,8 @@
 
     public static class Data
     {
+        public static bool Repeat = true;
+
         public static void UnsortedArrayPrint(int[] m)
         {
             Console.WriteLine("\nUNSORTED ARRAY: ");
@@ -15,7 +17,6 @@
             }
         }
 
-
         public static void SumPrint(int[] m)
         {
             int sum = 0;
@@ -26,12 +27,13 @@
                 {
                     sum += m[i];
                 }
+
                 Console.WriteLine($"m[{i}]= {m[i]}");
             }
+
             Console.Write($"\nSum = {sum}\n");
         }
 
-        public static bool Repeat = true;
         public static void WhileExit()
         {
             Console.WriteLine("\nTRY AGAIN ? [Y/N]");
