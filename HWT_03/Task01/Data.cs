@@ -12,7 +12,7 @@
             Random rnd = new Random();
             for (int i = 0; i < num.Length; i++)
             {
-                num[i] = rnd.Next(0, 100);
+                num[i] = rnd.Next(0, 100);//todo pn хардкод
                 Console.WriteLine($"num[{i}]= {num[i]}");
             }
         }
@@ -25,7 +25,7 @@
             }
         }
 
-        public static void BubleSort(int[] num)
+        public static void BubleSort(int[] num)//todo pn серьезно? пузырьковой? :С
         {
             Console.WriteLine("\nSorted Array: ");
             for (int k = num.Length - 1; k > 0; k--)

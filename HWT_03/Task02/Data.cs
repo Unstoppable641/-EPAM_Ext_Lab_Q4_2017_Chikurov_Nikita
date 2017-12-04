@@ -16,8 +16,8 @@
                 {
                     for (int z = 0; z < c; z++)
                     {
-                        m[x, y, z] = rnd.Next(-5, 4);
-                        Console.Write($"{m[x, y, z]}\t ");
+                        m[x, y, z] = rnd.Next(-5, 4);//todo pn хардкод
+						Console.Write($"{m[x, y, z]}\t ");
                     }
 
                     Console.WriteLine(string.Empty);

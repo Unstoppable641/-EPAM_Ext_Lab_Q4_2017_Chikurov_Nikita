@@ -12,8 +12,8 @@
             Random rnd = new Random();
             for (int i = 0; i < m.Length; i++)
             {
-                m[i] = rnd.Next(-10, 10);
-                Console.WriteLine($"m[{i}]= {m[i]}");
+                m[i] = rnd.Next(-10, 10);//todo pn хардкод
+				Console.WriteLine($"m[{i}]= {m[i]}");
             }
         }
 

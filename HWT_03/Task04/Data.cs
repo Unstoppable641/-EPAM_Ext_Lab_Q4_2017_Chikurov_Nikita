@@ -42,8 +42,8 @@
             {
                 for (int j = 0; j < b; j++)
                 {
-                    m[i, j] = rnd.Next(-10, 10);
-                    Console.WriteLine($"m[{i}]= {m[i, j]}");
+                    m[i, j] = rnd.Next(-10, 10);//todo pn хардкод
+					Console.WriteLine($"m[{i}]= {m[i, j]}");
                 }
             }
         }
