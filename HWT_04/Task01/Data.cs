@@ -16,15 +16,15 @@
 
             Console.WriteLine("Enter the string:\n");
             var str = Console.ReadLine();
-            var arr = str.Split(new char[] { ' ', '!', '?', ':', ',', '.' }, StringSplitOptions.RemoveEmptyEntries);
+            var arr = str.Split(new char[] { ' ', '!', '?', ':', ',', '.' }, StringSplitOptions.RemoveEmptyEntries);//todo pn костыль. Используй Char.IsSeparator
             for (var i = 0; i < arr.Length; i++)
             {
                 allWordLength += arr.Sum(s => s.Length);
                 allWordLength = allWordLength + WordLength;
             }
 
-            var numberOfCharacters = allWordLength / arr.Length;
-            Console.WriteLine($"\nNumber of characters in string [{str}] = {numberOfCharacters}");
+            var numberOfCharacters = allWordLength / arr.Length;//todo pn неправильная логика работы. Тебе нужно "среднюю длину слова во введенной текстовой строке"
+			Console.WriteLine($"\nNumber of characters in string [{str}] = {numberOfCharacters}");
         }
 
         public static void WhileExit()

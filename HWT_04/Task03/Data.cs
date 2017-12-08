@@ -16,7 +16,7 @@
 
             for (int i = 0; i < n; i++)
             {
-                str += "*";
+                str += "*";//todo pn хардкод
             }
 
             sw.Stop();
@@ -30,8 +30,8 @@
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < n; i++)
             {
-                sb.Append("*");
-            }
+                sb.Append("*");//todo pn хардкод
+			}
 
             sw.Stop();
             Console.WriteLine("Time Spent w/ StringBuilder:\n" + sw.Elapsed);
