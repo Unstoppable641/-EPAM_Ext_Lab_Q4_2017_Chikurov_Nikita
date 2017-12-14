@@ -30,6 +30,6 @@
             }
         }
 
-        public int Age => DateTime.Now.Year - this.Birthday.Year;
-    }
+        public int Age => DateTime.Now.Year - this.Birthday.Year;//todo pn некорректное вычисление
+	}
 }

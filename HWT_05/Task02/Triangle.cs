@@ -20,8 +20,8 @@
 
             set
             {
-                if (value > 0)
-                {
+                if (value > 0)//todo pn где проверка на то, что треугольник вообще можно собрать из этих отрезков?
+				{
                     a = value;
                 }
             }
@@ -66,13 +66,13 @@
             //// http://www.webmath.ru/poleznoe/formules16.php 
             var p = (GetA + GetB + GetC) / 2;
             var area = Math.Sqrt(p * (p - a) * (p - GetB) * (p - GetC));
-            Console.WriteLine($"The area of the triangle = {area}");
-        }
+            Console.WriteLine($"The area of the triangle = {area}");//todo pn сильная связность
+		}
 
         public static void GetLength()
         {
             var length = GetA + GetB + GetC;
-            Console.WriteLine($"The perimeter of the triangle = {length}");
-        }
+            Console.WriteLine($"The perimeter of the triangle = {length}");//todo pn здесь тоже
+		}
     }
 }

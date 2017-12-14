@@ -6,8 +6,8 @@
     {
             public double GetArea()
             {
-                return Math.PI * this.radius * this.radius;
-            }
+                return Math.PI * this.radius * this.radius;//todo pn ты должен использовать открытое свойство, а не поле
+		}
 
             public string DisplayInfo()
             {

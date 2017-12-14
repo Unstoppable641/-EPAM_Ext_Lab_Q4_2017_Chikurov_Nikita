@@ -6,8 +6,8 @@ namespace Task04
 {
     using System;
 
-    public class MyString
-    {
+    public class MyString //todo pn чот ты ленивый какой-то, давай ещё два метода
+	{
         private char[] str;
         public char[] StrVal { get; set; }
         public MyString(char[] s)
