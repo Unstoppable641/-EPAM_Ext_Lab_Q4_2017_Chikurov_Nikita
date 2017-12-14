@@ -4,9 +4,9 @@
 
     public class CreateMap : IMap
     {
-        private int[,] bonuses;
+        private int[,] bonuses;//todo pn бонусы бывают разные
 
-        private int[,] barriers;
+        private int[,] barriers;//todo pn барьеры бывают разные
 
         public CreateMap()
         {

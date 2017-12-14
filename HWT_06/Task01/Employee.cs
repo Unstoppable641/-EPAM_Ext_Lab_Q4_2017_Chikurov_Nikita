@@ -24,7 +24,7 @@ namespace Task01
 
         public string Company { get; set; }
 
-        public int WorkExperience { get; set; }
+        public int WorkExperience { get; set; }//todo pn лучше датой 
 
         public string Position { get; set; }
 

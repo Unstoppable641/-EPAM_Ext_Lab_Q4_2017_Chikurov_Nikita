@@ -23,8 +23,8 @@
 
         public int SideB { get; set; }
 
-        public new double Length()
-        {
+        public new double Length()//todo pn override должен быть, а не new, потому что ты наследуешься и переопределяешь метод, а не перетираешь
+		{
             return 2 * (this.SideA + this.SideB);
         }
 

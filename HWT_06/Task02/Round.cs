@@ -36,7 +36,7 @@
             return 2 * Math.PI * this.OutteR;
         }
 
-        public virtual string Display()
+        public virtual string Display() //todo pn ToString лучше
         {
             return string.Format($"The circle with the center ({X}; {Y}) and the radius R = {OutteR} has the area = {Area(): 0. ##} and the perimeter = {Length():0.##}");
         }
