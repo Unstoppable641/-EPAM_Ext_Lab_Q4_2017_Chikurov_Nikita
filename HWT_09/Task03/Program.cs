@@ -11,38 +11,103 @@
 5. LINQ-выражения
 Сравнить скорость выполнения вычислений.
  */
-
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-
 namespace Task03
 {
     using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Linq;
 
     public class Program
     {
         public static void Main(string[] args)
         {
-            const int Length = 100;
-            const int MaxRandom = 100;
-            const int Size = 100;
+            const int length = 1000;
+            const int maxRandom = 1000;
+            const int size = 1000;
 
-            long[] arrayTime = new long[Size];
-            int[] array = new int[Length];
+            long[] arrayTime = new long[size];
+            int[] array = new int[length];
 
-            Random random = new Random();
-            for (int i = 0; i < array.Length; i++)
+            var random = new Random();
+            for (var i = 0; i < array.Length; i++)
             {
-                array[i] = random.Next(MaxRandom);
+                array[i] = random.Next(maxRandom);
             }
 
             Stopwatch stopWatch = new Stopwatch();
 
+            for (var i = 0; i < size; i++)
+            {
+                stopWatch.Start();
+                Sort.SumMax(array);
+                stopWatch.Stop();
+                arrayTime[i] = stopWatch.ElapsedTicks;
+                stopWatch.Reset();
+            }
 
+            Array.Sort(arrayTime);
+            Console.WriteLine($"search directly: {arrayTime[size / 2]}");
 
-            // ИНИЦИАЛИЗИРОВАТЬ МЕТОДЫ
-            // НЕ УСПЕЛ, ВЫШЛЮ ДОПИСАННЫЙ КОД ЧЕРЕЗ ДЕНЬ 9 Января.
+            for (var i = 0; i < size; i++)
+            {
+                stopWatch.Start();
+                Sort.SumMax(array, Sort.IsPositive);
+                stopWatch.Stop();
+                arrayTime[i] = stopWatch.ElapsedTicks;
+                stopWatch.Reset();
+            }
+
+            Array.Sort(arrayTime);
+            Console.WriteLine($"through the delegate: {arrayTime[size / 2]}");
+
+            for (var i = 0; i < size; i++)
+            {
+                stopWatch.Start();
+                Sort.SumMax(array, delegate(int obj)
+                {
+                    if (obj > 0)
+                    {
+                        return true;
+                    }
+
+                    return false;
+                });
+
+                stopWatch.Stop();
+                arrayTime[i] = stopWatch.ElapsedTicks;
+                stopWatch.Reset();
+            }
+
+            Array.Sort(arrayTime);
+            Console.WriteLine($"through the delegate to the form of an anonymous method: {arrayTime[size / 2]}");
+
+            for (var i = 0; i < size; i++)
+            {
+                stopWatch.Start();
+                int[] positiveNumbers = Sort.SumMax(array, x => x > 0);
+                stopWatch.Stop();
+                arrayTime[i] = stopWatch.ElapsedTicks;
+                stopWatch.Reset();
+            }
+
+            Array.Sort(arrayTime);
+            Console.WriteLine($"through the delegate to the form of lambda expression: {arrayTime[size / 2]}");
+
+            for (var i = 0; i < size; i++)
+            {
+                stopWatch.Start();
+                var list = from x in array
+                           where x > 0
+                           select x;
+                list.ToArray();
+                stopWatch.Stop();
+                arrayTime[i] = stopWatch.ElapsedTicks;
+                stopWatch.Reset();
+            }
+
+            Array.Sort(arrayTime);
+            Console.WriteLine($"LINQ Expressions: {arrayTime[size / 2]}");
 
             Console.ReadLine();
         }
