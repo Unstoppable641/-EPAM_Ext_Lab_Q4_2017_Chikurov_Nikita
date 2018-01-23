@@ -14,8 +14,8 @@ namespace Task02
     {
         public static void Main(string[] args)
         {
-            while (EndProg.Repeat)
-            {
+            while (EndProg.Repeat)//todo pn в отдельную сборку чтобы не повторять код в разных проектах
+			{
                 try
                 {
                     var sumWords = 0;
@@ -61,8 +61,8 @@ namespace Task02
                         Console.WriteLine($"The word {item.Word} met {item.Amout} time(s)");
                     }
 
-                    EndProg.WhileExit();
-                }
+                    EndProg.WhileExit();//todo pn в отдельную сборку чтобы не повторять код в разных проектах
+				}
                 catch (Exception ex)
                 {
                     Console.WriteLine($"ERROR: {ex.Message}");

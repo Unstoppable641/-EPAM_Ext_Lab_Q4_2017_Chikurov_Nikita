@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    public class DynamicArray<T> where T : new()
+    public class DynamicArray<T> where T : new() //todo pn добавь тесты на каждый из реализованных методов этого класса
     {
         private const int DefaultCapacity = 8;
         private const int Reserve = 2; 

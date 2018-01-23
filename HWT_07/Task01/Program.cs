@@ -13,13 +13,13 @@ namespace Task01
     {
         public static void Main(string[] args)
         {
-            while (EndProg.Repeat)
-            {
+            while (EndProg.Repeat)//todo pn в отдельную сборку чтобы не повторять код в разных проектах
+			{
                 try
                 {
                     Console.WriteLine("Enter the number of people: ");
                     var countPeople = DeletingEverySecondN.ReadNumber();
-                    List<int> list = new List<int>(countPeople);
+                    List<int> list = new List<int>(countPeople); 
                     for (var i = 1; i < countPeople + 1; i++)
                     {
                         list.Add(i);
@@ -27,7 +27,7 @@ namespace Task01
 
                     DeletingEverySecondN.PrintList(list);
 
-                    while (list.Count > DeletingEverySecondN.WhileListHaveNumbers)
+                    while (list.Count > DeletingEverySecondN.WhileListHaveNumbers) //todo pn у тебя бизнес логика не вынесена в отдельный класс и не отделена от логики представления
                     {
                         for (var i = 0; i < list.Count; i++)
                         {
@@ -42,8 +42,8 @@ namespace Task01
                         DeletingEverySecondN.PrintList(list);
                     }
 
-                    EndProg.WhileExit();
-                }
+                    EndProg.WhileExit();//todo pn в отдельную сборку чтобы не повторять код в разных проектах
+				}
                 catch (Exception ex)
                 {
                     Console.WriteLine($"ERROR: {ex.Message}");
