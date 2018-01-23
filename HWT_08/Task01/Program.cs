@@ -27,7 +27,7 @@ namespace Task01
 
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main(string[] args)//todo pn требование задания не выполнено (в офисе сидять грубияны и не здороваются).
         {
             var ivan = new Person("Иван");
             var petr = new Person("Петр");

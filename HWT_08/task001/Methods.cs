@@ -13,7 +13,7 @@
                 return;
             }
 
-            for (var i = 0; i < strings.Length - 1; i++)
+            for (var i = 0; i < strings.Length - 1; i++)//todo pn давай не пузырьковой сортировкой, а более оптимальной
             {
                 for (var j = i + 1; j < strings.Length; j++)
                 {

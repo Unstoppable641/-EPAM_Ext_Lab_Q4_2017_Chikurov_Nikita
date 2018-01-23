@@ -4,6 +4,6 @@
 
     public class Time : EventArgs
     {
-        public static DateTime Timing => DateTime.Now;
-    }
+        public static DateTime Timing => DateTime.Now;//todo pn не увидел профита этого класса
+	}
 }
