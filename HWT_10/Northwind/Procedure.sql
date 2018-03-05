@@ -1,5 +1,5 @@
 ﻿--13.1
-CREATE PROCEDURE Northwind.GreatestOrders @year int, @countRecords int AS
+CREATE PROCEDURE Northwind.GreatestOrders @year int, @countRecords int AS --нужно проверят, существует ли процедура в БД и если да - удалять её перед созданием твоей. Либо изменять. Иначе билд будет падать.
 SELECT TOP (@countRecords) Emp.FirstName + ' ' + Emp.LastName AS EmployeeName,
        Ord.OrderID, Ord.UnitPrice * (1 - Ord.Discount) AS Cost
   FROM Northwind.Employees AS Emp
