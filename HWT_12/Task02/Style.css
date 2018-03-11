@@ -1,0 +1,45 @@
+﻿.main {
+    background-color: #0690CF;
+    color: white;
+    width: 350px;
+    height: 200px;
+    padding: 20px 0;
+
+    border: 3px solid  #1782B9;
+}
+
+.padding {
+    padding-left: 20px;
+	
+    margin-bottom: 20px;
+}
+
+.registration {
+    font-size: 120%;
+    border-bottom: 2px solid white;
+	padding-bottom:10px;
+    
+}
+
+.button {
+    background-color: #FFDF7F;
+    color: black;
+}
+
+#right {
+    float: right;
+    width:160px;
+}
+
+#left{
+    float:left;
+    width:140px;
+}
+
+.inputPass {
+	width:150px;
+}
+
+.inputMail {
+	width: 320px;
+}

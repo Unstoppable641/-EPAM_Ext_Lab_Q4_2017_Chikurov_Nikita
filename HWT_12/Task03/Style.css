@@ -1,0 +1,149 @@
+﻿body {
+    border: 1px solid black;
+}
+
+.header {
+    height: 100px;
+}
+
+.header h1 {
+    padding-top: 25px;
+}
+#center {
+   text-align: center;
+}
+.width {
+    width: 200px;
+}
+
+.column {
+    border: 1px solid black;
+    padding: 5px;
+    min-height: 100%;
+}
+
+h1, h2, h3 {
+    color: #06327B;
+}
+
+.footer{
+    position: relative;
+    width: 100%;
+}
+
+.layout { overflow: hidden;}
+
+.col1 { 
+   float: left;
+   border-left: none;
+}
+
+.col2 {
+    margin: 0 210px 0 210px;
+}
+
+.col3 {  
+   float: right;
+    border-right: none;
+}
+
+img{
+    padding: 5px; 
+}
+
+#punkt {
+    padding-left: 70px;
+}
+
+a, index {
+    color: #7BB5DE;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    padding-bottom: 10px;
+}
+
+#content {
+    text-indent: 20px;
+    text-align: justify;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight:bold;
+}
+
+index {
+    vertical-align:super;
+    font-size: 10px;
+}
+
+
+form {
+    padding-top:20px;
+}
+
+label { 
+    float:left;
+    
+}
+
+input, label, select{
+    margin-bottom: 10px;
+}
+
+#fullwidth {
+    width: 100%;  
+}
+
+.enter {
+    background: #D9D9D9;
+    border-radius: 5px;
+    text-align: left;
+    text-indent: 5px;
+    border: 1px solid;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption h3{
+    margin: 0;
+    text-align: left;
+}
+
+th, tr, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+table th first-child {
+    width: 10%;
+    text-align: center;
+}
+
+table th last-child {
+    width: 10%;
+    text-align: center;
+}
+
+#cellmid {
+    text-align: left;
+}
+
+table td:last-child {
+    text-align: center;
+}
+
+table td:first-child {
+    text-align: center;
+}

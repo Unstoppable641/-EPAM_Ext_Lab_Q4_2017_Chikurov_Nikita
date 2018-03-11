@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Task03</title>
+    <link href="Style.css" rel="stylesheet" />
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div class="header">
+        <h1 id="center">Макет задания по "Основы HTML"</h1>
+    </div>
+    <div class="layout">
+        <div class="col1 width column">
+            <h2>Меню</h2>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="index.html">Продукты</a></li>
+                <li><a href="index.html">Кафе</a></li>
+                <li><a href="index.html">Рестораны</a></li>
+                <li><a href="index.html">Вопросы</a></li>
+                <li><a href="index.html">Акции</a></li>
+            </ul>
+        </div>
+        <div class="col3 width column">
+            <form>
+                <label>Логин</label>
+                <input id="fullwidth" name="login" placeholder="Логин" />
+                <label>Пароль</label>
+                <input id="fullwidth" name="password" type="password" placeholder="*******" />
+                <p>
+                    <select id="fullwidth" name="example">
+                        <option value="Admin">Admin</option>
+                        <option value="User">user</option>
+                        <option value="Test">Test</option>
+                    </select>
+                </p>
+                <label>
+                    <input class="checkbox" type="checkbox" name="checkbox" />
+                    <span class="checkbox-custom"></span>
+                    <span class="label">Запомнить меня</span>
+                </label>
+                <input type="button" id="fullwidth" class="enter" value="Вход" />
+            </form>
+        </div>
+        <div class="col2 column">
+            <h2 id="center">Основной контент</h2>
+            <p id="content">
+                <img src="bogatyri.jpg" width="100" height="100" align="right" alt="bogatyri" />
+                Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).
+            </p>
+            <ul id="punkt" type="square">
+                <li class="italic">Курсивный пункт<index>2</index></li>
+                <li class="bold">Жирный пункт</li>
+            </ul>
+            <table>
+                <caption><h3>Список товаров в магазине</h3></caption>
+                <thead>
+                <th>Номер</th>
+                <th id="cellmid">Название</th>
+                <th>Цена</th>
+                </thead>
+                <tr>
+                    <td>1</td>
+                    <td>Меч</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Булава</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Верный конь</td>
+                    <td>15</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    <div class="footer">©2014 Основы HTML</div>
+</body>
+</html>
