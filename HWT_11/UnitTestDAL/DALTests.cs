@@ -85,8 +85,8 @@
                 "GB");
 
             // assert
-            Assert.AreEqual(expected, actual);
-        }
+            Assert.AreEqual(expected, actual);//todo pn некорректный тест (а если в базе уже есть такая запись? тест упадет)
+		}
 
         [TestMethod]
         public void SetOrderDateTest()
@@ -99,7 +99,7 @@
 
             int actual = dal.SetOrderDate(orderDate, orderID);
 
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual);//todo pn некорректный тест
         }
 
         [TestMethod]
@@ -113,8 +113,8 @@
 
             int actual = dal.SetOrderDate(orderDate, orderID);
 
-            Assert.AreEqual(expected, actual);
-        }
+            Assert.AreEqual(expected, actual);//todo pn некорректный тест
+		}
 
         [TestMethod]
         public void GetOrderHistoryTest()

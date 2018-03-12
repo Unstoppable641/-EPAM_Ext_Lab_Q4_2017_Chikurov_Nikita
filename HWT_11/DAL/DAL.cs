@@ -15,7 +15,7 @@
 
         public DAL()
         {
-            var connectionStringItem = ConfigurationManager.ConnectionStrings["Northwind Connection"];
+            var connectionStringItem = ConfigurationManager.ConnectionStrings["NorthwindConnection"];//todo pn АТАТА!
             this.connectionString = connectionStringItem.ConnectionString;
             var providerName = connectionStringItem.ProviderName;
             this.providerFactory = DbProviderFactories.GetFactory(providerName);
