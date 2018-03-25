@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="main.js"></script>
+    <link href="Style.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="blockSelector">
+        <p>Available</p>
+        <div class="block">
+            <select multiple id="leftBox">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+            </select>
+        </div>
+    </div>
+    <ul>
+        <li><button onclick="buttonSelectorHandler(this,'leftBox','rightBox')" value=">>">>></button></li>
+        <li><button onclick="buttonSelectorHandler(this, 'leftBox','rightBox')" value=">">></button></li>
+        <li><button onclick="buttonSelectorHandler(this, 'rightBox','leftBox')" value="<"><</button></li>
+        <li><button onclick="buttonSelectorHandler(this, 'rightBox', 'leftBox')" value="<<"><<</button></li>
+    </ul>
+    <div class="blockSelector">
+        <p>Selected</p>
+        <div class="block">
+            <select multiple id="rightBox">
+                <option>Option 4</option>
+                <option>Option 5</option>
+                <option>Option 6</option>
+            </select>
+        </div>
+    </div>
+</body>
+</html>
