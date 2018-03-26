@@ -18,7 +18,7 @@ function changeTimer() {
 
 function toNextPage() {
     isPaused = true;
-    var dialogMessage = "Повторить пролистывание? (в случае отмены закроется окно браузера)";
+    var dialogMessage = "Repeat scrolling? (in case of cancellation, the browser window is closed)";
     var indexPage = Number(document.location.href.match(/Page[1-9]/)[0][4]);
     if (indexPage === countPages) {
         if (confirm(dialogMessage))
