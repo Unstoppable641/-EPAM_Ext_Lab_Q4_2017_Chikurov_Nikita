@@ -26,7 +26,7 @@
             if (ViewBag.ErrorMessage != null)
             {
             <div class="alert alert-danger col-md-2">
-                @Html.Label(ViewBag.ErrorMessage as string)
+                @*@Html.Label(ViewBag.ErrorMessage as string)*@
             </div>
             }
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })

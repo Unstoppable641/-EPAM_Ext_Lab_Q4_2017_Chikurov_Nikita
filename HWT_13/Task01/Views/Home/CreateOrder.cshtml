@@ -21,7 +21,7 @@
         <div class="form-horizontal">
             <h4>Order creating</h4>
             <hr />
-            if (ViewBag.ErrorMessage != null)
+            @if (ViewBag.ErrorMessage != null)
             {
             @Html.Label(ViewBag.ErrorMessage as string, new { @class = "text-danger coll-md-2" }) 
             }

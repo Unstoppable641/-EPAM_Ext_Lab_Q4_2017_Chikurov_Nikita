@@ -39,12 +39,12 @@ namespace Task01.Controllers
             // .ForMember(dest => dest.OrderStatus, opt => opt.MapFrom(src => Enum.GetName(typeof(OrderStatus),src.OrderState))));
 
             //
-            Mapper.Initialize(cfg => cfg.CreateMap<Order, OrderView>()
-                .ForMember(
-                dest => dest.OrderStatus,
-                opt => opt.MapFrom(src => Enum.GetName(
-                    typeof(OrderStatus),
-                    src.OrderState))));
+            //Mapper.Initialize(cfg => cfg.CreateMap<Order, OrderView>()
+            //    .ForMember(
+            //    dest => dest.OrderStatus,
+            //    opt => opt.MapFrom(src => Enum.GetName(
+            //        typeof(OrderStatus),
+            //        src.OrderState))));
 
             List<OrderView> OrderView = Mapper.Map<IEnumerable<Order>, List<OrderView>>(orders);
             for (var i = 0; i < orders.Count; i++)
@@ -78,7 +78,7 @@ namespace Task01.Controllers
         [HttpPost]
         public ActionResult CreateProduct(CreateProductViewModel model, string button)
         {
-            ViewBag.ErrorMessage = "Incorrect data";
+            ViewBag.ErrorMessage = "Incorrect data";// todo pn не понял, ещё ничего не проверил и уже некорректно?
             switch (button)
             {
                 case null:
@@ -116,7 +116,7 @@ namespace Task01.Controllers
                 return HttpNotFound();
             }
 
-            Mapper.Initialize(cfg => cfg.CreateMap<Order, OrderDetailsViewModel>()
+            Mapper.Initialize(cfg => cfg.CreateMap<Order, OrderDetailsViewModel>()//todo pn удалить
             .ForMember(
                 dest => dest.OrderStatus,
                 opt => opt.MapFrom(src => Enum.GetName(typeof(OrderStatus), src.OrderState))));
@@ -145,8 +145,8 @@ namespace Task01.Controllers
                 return View();
             }
 
-            dal.AddOrder(
-                model.OrderDate,
+            dal.AddOrder(//todo pn самому не надоело поля прописывать? передавал бы объект класса, было бы проще
+				model.OrderDate,
                 model.RequiredDate,
                 model.ShippedDate,
                 model.Freight,

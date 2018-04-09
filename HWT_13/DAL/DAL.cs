@@ -131,7 +131,7 @@
             return order;
         }
 
-        public int AddOrder(
+        public int AddOrder( //todo pn самому не надоело поля прописывать? передавал бы объект класса, было бы проще
             DateTime? orderDate,
             DateTime? requiredDate,
             DateTime? shippedDate,
